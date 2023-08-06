@@ -4,6 +4,8 @@ import { currentUser } from '@clerk/nextjs'
 const Onboarding = async () => {
   const user = await currentUser()
 
+  if (!user) return null
+
   const userInfo = {}
 
   const userData = {
